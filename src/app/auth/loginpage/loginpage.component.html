@@ -1,0 +1,8 @@
+<form [formGroup]=loginForm (ngSubmit)="login()" style="border: 5px inline red; background-color:purple; height:300px; width:500px;">
+    <h1 style="color:white; text-align:center;">Login</h1>
+    <table>
+    <tr><td><label>Email:</label></td><td><input type="email" name="email" id="email" formControlName="email"></td></tr><br>
+    <tr><td><label>Password:</label></td><td><input type="password" name="pass" id="pass" formControlName="pass"></td></tr><br>
+    <input type="submit" name="Submit" style="margin-left:100px;">
+    </table>
+</form>

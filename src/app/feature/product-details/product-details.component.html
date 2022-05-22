@@ -1,0 +1,43 @@
+ <div id="display_details" style="background-color:red;">
+    <div id="pdetail" >Product Details</div>        
+    <h4 id="pid">Product Id : <span>{{product.id}}</span></h4>
+    <h4>Product Name : <span>{{product.name | uppercase}}</span></h4>
+
+    <h4>Category :
+        <span>{{product.category}}</span>
+    </h4>
+
+    <h4>Price :
+        <span >{{product.price | currency:'USD'}}</span>
+    </h4>
+
+    <h4>StockUnits :
+        <span >{{product.Stock_units}} </span>
+        <ng-template [ngIf]= "product.Stock_units<=10 && product.Stock_units>3">   
+        <span style="color:#fd7e14">Only {{product.Stock_units}}left</span>
+        </ng-template>
+        <ng-template [ngIf]= "product.Stock_units<=3">   
+            <span style="color:red">Only {{product.Stock_units}}left</span>
+            </ng-template>
+            <ng-template [ngIf]= "product.Stock_units>10">   
+                <span style="color:green">Only {{product.Stock_units}}left</span>
+                </ng-template>
+    </h4>
+
+    <h4>Release Date :
+        <span> {{product.release_date | date:'medium'}} </span>
+    </h4>
+
+    <h4>Serial Number :
+        <span >{{product.serial_number}}</span>
+    </h4>
+
+    <h4>Description :
+        <span > {{product.Description}} </span>
+    </h4>
+
+    <button class="btn" (click)="backToProduct()">Back To Product List</button>
+    
+    
+</div>  <!-- end of div display_details -->
+
